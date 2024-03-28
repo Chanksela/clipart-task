@@ -1,6 +1,6 @@
 <template>
   <div class="lg:grid lg:grid-cols-8 lg:gap-x-8 xl:grid-cols-12">
-    <SliderCard class="lg:col-span-5 xl:col-span-10">
+    <SliderCard class="lg:col-span-8 xl:col-span-10">
       <Swiper
         :spaceBetween="30"
         :effect="'fade'"
@@ -36,7 +36,9 @@
       </div>
     </SliderCard>
 
-    <BaseCard class="max-h-[330px] min-h-[330px] lg:col-span-4 xl:col-span-2">
+    <BaseCard
+      class="max-h-[330px] min-h-[330px] lg:col-span-4 lg:overflow-y-scroll xl:col-span-2"
+    >
       <BaseCardTitle>ყველა სიახლე</BaseCardTitle>
       <ul class="flex flex-col gap-4 pt-4">
         <li v-for="article in articles" class="border-b-2 border-dashed pb-4">

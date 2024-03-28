@@ -105,6 +105,7 @@ export default {
       } else {
         this.categories.push(this.otherCategories.pop());
       }
+      console.log(headerElement.scrollWidth, headerElement.offsetWidth);
     },
   },
   mounted() {
