@@ -1,24 +1,40 @@
 <template>
-	<header class="px-[16px] h-[80px] bg-white flex">
+	<header class="sm:px-[56px] px-[16px] h-[80px] bg-white flex">
 		<nav class="flex justify-between items-center w-full">
-			<div><img :src="logo" alt="company logo" /></div>
-			<div class="flex gap-2">
-				<div test class="hidden sm:block sm:relative">
-					<input
-						type="text"
-						name="search"
-						class="bg-primary-light rounded-[64px] h-[48px] w-[224px] indent-[16px] text-black-900 outline-2 outline-primary"
-					/>
-					<div
-						class="absolute top-0 right-0 mr-4 h-full flex justify-center items-center"
-					>
-						<img :src="searchIcon" alt="search icon" />
+			<a href="/"
+				><img :src="logo" alt="company logo" class="min-w-[164px]"
+			/></a>
+			<DesktopNavigation :categories="categories" />
+			<div class="flex items-center gap-2">
+				<div class="hidden sm:flex sm:items-center sm:gap-2">
+					<SocialMedias />
+					<div test class="block relative">
+						<input
+							type="text"
+							name="search"
+							:value="searchText"
+							@focus="showPlaceholder = false"
+							@blur="showPlaceholder = !searchText"
+							class="bg-primary-light rounded-[64px] h-[48px] w-[224px] indent-[16px] text-black-900 placeholder:text-black-900 outline-2 outline-primary"
+						/>
+						<div
+							class="absolute top-0 right-0 mr-4 h-full flex justify-center items-center"
+						>
+							<img :src="searchIcon" alt="search icon" />
+						</div>
+						<div
+							v-if="showPlaceholder"
+							class="absolute top-0 left-0 ml-4 h-full flex items-center text-black-900"
+						>
+							{{ placeholderText }}
+						</div>
 					</div>
 				</div>
+
 				<CircleIcon class="sm:hidden">
 					<img :src="searchIcon" alt="search icon" />
 				</CircleIcon>
-				<CircleIcon @click="toggleHamburgerMenu">
+				<CircleIcon @click="toggleHamburgerMenu" class="lg:hidden">
 					<img :src="hamburgerIcon" alt="hamburger menuicon" />
 				</CircleIcon>
 			</div>
@@ -26,6 +42,7 @@
 	</header>
 	<MobileMenu v-if="mobileMenuOpen" />
 </template>
+
 <script>
 	// icons
 	import logo from "../assets/svg/logo.svg";
@@ -35,10 +52,12 @@
 	import inst from "../assets/svg/inst.svg";
 
 	import CircleIcon from "./common/CircleIcon.vue";
+	import SocialMedias from "./common/SocialMedias.vue";
 	import MobileMenu from "./common/MobileMenu.vue";
+	import DesktopNavigation from "./common/DesktopNavigation.vue";
 	export default {
 		name: "Navigation",
-		components: { CircleIcon, MobileMenu },
+		components: { CircleIcon, MobileMenu, SocialMedias, DesktopNavigation },
 		data() {
 			return {
 				logo,
@@ -47,6 +66,8 @@
 				fb,
 				inst,
 				mobileMenuOpen: false,
+				showPlaceholder: true,
+				searchText: "",
 				categories: [
 					"პოლიტიკა",
 					"საზოგადოება",
@@ -57,6 +78,11 @@
 					"რელიგია",
 				],
 			};
+		},
+		computed: {
+			placeholderText() {
+				return this.searchText ? "" : "ძიება";
+			},
 		},
 		methods: {
 			toggleHamburgerMenu() {
