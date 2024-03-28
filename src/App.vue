@@ -1,9 +1,17 @@
 <template>
-	<div class="bg-primary">
-		<h1
-			class="font-noto text-headline-mobile leading-headline-3 font-semibold tracking-headline-3"
-		>
-			გამარჯობა სამაყარო!
-		</h1>
-	</div>
+  <Navigation />
+  <div class="lg:px-12">
+    <Content />
+  </div>
 </template>
+<script>
+import Navigation from "./components/Navigation.vue";
+import Content from "./components/Content.vue";
+export default {
+  name: "App",
+  components: {
+    Navigation,
+    Content,
+  },
+};
+</script>
