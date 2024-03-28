@@ -1,13 +1,27 @@
 <template>
   <div class="lg:grid lg:grid-cols-8 lg:gap-x-8 xl:grid-cols-12">
-    <SliderCard class="lg:col-span-8 xl:col-span-10">
-      <div>
-        <img
-          src="../assets/pics/article1.jpeg"
-          alt=""
-          class="mb-4 rounded-[20px]"
-        />
-      </div>
+    <SliderCard class="lg:col-span-5 xl:col-span-10">
+      <Swiper
+        :spaceBetween="30"
+        :effect="'fade'"
+        :navigation="true"
+        :pagination="{
+          clickable: true,
+        }"
+        :modules="modules"
+        class="h-[280px] w-full lg:h-[400px]"
+      >
+        <SwiperSlide
+          v-for="article in articles"
+          class="flex items-center justify-center"
+        >
+          <img
+            :src="article.image"
+            alt=""
+            class="mb-4 h-full w-full rounded-[20px] object-cover xl:min-w-full"
+          />
+        </SwiperSlide>
+      </Swiper>
       <div class="mb-2 flex gap-1">
         <InfoSpan> 12.08.2023 </InfoSpan>
         <InfoSpan> პოლიტიკა </InfoSpan>
@@ -21,6 +35,7 @@
         </h2>
       </div>
     </SliderCard>
+
     <BaseCard class="max-h-[330px] min-h-[330px] lg:col-span-4 xl:col-span-2">
       <BaseCardTitle>ყველა სიახლე</BaseCardTitle>
       <ul class="flex flex-col gap-4 pt-4">
@@ -117,6 +132,13 @@
   </div>
 </template>
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { EffectFade, Navigation, Pagination } from "swiper/modules";
+
 import SliderCard from "./common/content/SliderCard.vue";
 import BaseCard from "./common/content/BaseCard.vue";
 import BaseCardTitle from "./common/content/BaseCardTitle.vue";
@@ -126,10 +148,17 @@ import watchIcon from "../assets/svg/watch.svg";
 export default {
   name: "Content",
   components: {
+    Swiper,
+    SwiperSlide,
     SliderCard,
     BaseCard,
     BaseCardTitle,
     InfoSpan,
+  },
+  setup() {
+    return {
+      modules: [EffectFade, Navigation, Pagination],
+    };
   },
   data() {
     return {

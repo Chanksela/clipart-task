@@ -20,3 +20,26 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #657178; /* Color of the handle on hover */
 }
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: white;
+  border-radius: 50% !important;
+  color: black !important;
+  font-size: 24px !important;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px !important;
+}
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 50% !important;
+}
+.swiper-pagination-bullet-active {
+  border-radius: 64px !important;
+  width: 24px !important;
+  background: white !important;
+  opacity: 100% !important;
+}
