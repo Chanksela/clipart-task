@@ -10,8 +10,12 @@
       class="text-headline relative ml-[32px] w-[180px] cursor-default font-medium leading-[24px] tracking-text text-black-600"
     >
       <span @click="toggleOtherCategories" class="hover:text-primary">
-        სხვა</span
-      >
+        სხვა
+        <span class="color-primary ml-2 inline-block">
+          <img :src="arrowDown" alt="arrow" />
+        </span>
+      </span>
+
       <ul
         class="absolute z-20 mt-2.5 flex w-full flex-col gap-4 rounded-2xl bg-white py-4 shadow-big"
         v-if="showOtherCategories"
@@ -28,6 +32,7 @@
 </template>
 
 <script>
+import arrowDown from "../../assets/svg/arrow-dropdown.svg";
 export default {
   props: {
     categories: {
@@ -45,6 +50,7 @@ export default {
   },
   data() {
     return {
+      arrowDown,
       showOtherCategories: false,
     };
   },
