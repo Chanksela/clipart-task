@@ -1,6 +1,8 @@
 <template>
   <Navigation />
-  <Content />
+  <div class="lg:px-12">
+    <Content />
+  </div>
 </template>
 <script>
 import Navigation from "./components/Navigation.vue";

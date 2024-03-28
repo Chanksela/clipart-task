@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="my-6 w-full overflow-y-scroll rounded-[20px] px-4 pb-6 pt-3 shadow-small"
-  >
+  <div class="my-6 rounded-[20px] px-[16px] pb-[24px] pt-[12px] shadow-small">
     <slot></slot>
   </div>
 </template>
