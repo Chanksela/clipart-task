@@ -82,7 +82,7 @@
       <ul class="flex items-center gap-4">
         <li
           v-for="article in articles"
-          class="flex min-w-[320px] flex-col gap-2 rounded-[20px] bg-primary-light p-12 pb-16 lg:min-w-[312px]"
+          class="flex min-w-[300px] flex-col gap-2 rounded-[20px] bg-primary-light p-12 pb-16 lg:min-h-[330px] lg:min-w-[312px]"
         >
           <div>
             <img
