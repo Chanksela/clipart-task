@@ -6,12 +6,18 @@
 		>
 			{{ category }}
 		</li>
-		<p
+		<div
 			class="w-[180px] ml-[32px] text-headline text-black-600 leading-[24px] tracking-text hover:text-primary cursor-default font-medium"
 		>
-			სხვა
-			<li class="list-none"></li>
-		</p>
+			<span @click="toggleOtherCategories"> სხვა</span>
+			<li
+				class="list-none"
+				v-for="otherCategory in otherCategories"
+				v-show="showOtherCategories"
+			>
+				{{ otherCategory }}
+			</li>
+		</div>
 	</ul>
 </template>
 
@@ -22,19 +28,23 @@
 				type: Array,
 				required: true,
 			},
+			overflow: {
+				type: Boolean,
+				required: true,
+			},
+			otherCategories: {
+				type: Array,
+				required: true,
+			},
 		},
-		mounted() {
-			this.getUlOffsetWidth();
-			window.addEventListener("resize", this.getUlOffsetWidth);
-		},
-		beforeUnmount() {
-			window.removeEventListener("resize", this.getUlOffsetWidth);
+		data() {
+			return {
+				showOtherCategories: false,
+			};
 		},
 		methods: {
-			getUlOffsetWidth() {
-				const ulOffsetWidth = this.$refs.list.offsetWidth;
-				console.log("Offset width of ul:", ulOffsetWidth);
-				// You can use ulOffsetWidth as needed in your component
+			toggleOtherCategories() {
+				this.showOtherCategories = !this.showOtherCategories;
 			},
 		},
 	};

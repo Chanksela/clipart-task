@@ -1,11 +1,23 @@
 <template>
-	<header class="sm:px-[56px] px-[16px] h-[80px] bg-white flex">
+	<header
+		class="sm:px-[56px] px-[16px] h-[80px] bg-white flex"
+		ref="navigation"
+	>
 		<nav class="flex justify-between items-center w-full">
 			<a href="/"
-				><img :src="logo" alt="company logo" class="min-w-[164px]"
+				><img
+					:src="logo"
+					alt="company logo"
+					class="min-w-[164px] max-w-[164px]"
 			/></a>
-			<DesktopNavigation :categories="categories" />
-			<div class="flex items-center gap-2">
+			<DesktopNavigation
+				:overflow="overflow"
+				:categories="categories"
+				:otherCategories="otherCategories"
+			/>
+			<div
+				class="flex items-center gap-2 min-w-[312px] max-w-[312px] justify-end"
+			>
 				<div class="hidden sm:flex sm:items-center sm:gap-2">
 					<SocialMedias />
 					<div test class="block relative">
@@ -68,6 +80,8 @@
 				mobileMenuOpen: false,
 				showPlaceholder: true,
 				searchText: "",
+				overflow: false,
+				test: "",
 				categories: [
 					"პოლიტიკა",
 					"საზოგადოება",
@@ -75,8 +89,12 @@
 					"ბიზნესი & ეკონომიკა",
 					"ბიზნესი & ეკონომიკა",
 					"ეკონომიკა",
+					"ბიზნესი & ეკონომიკა",
+					"ბიზნესი & ეკონომიკა",
+					"ეკონომიკა",
 					"რელიგია",
 				],
+				otherCategories: [],
 			};
 		},
 		computed: {
@@ -88,6 +106,21 @@
 			toggleHamburgerMenu() {
 				this.mobileMenuOpen = !this.mobileMenuOpen;
 			},
+			checkOverflow() {
+				const headerElement = this.$refs.navigation;
+				if (headerElement.scrollWidth > headerElement.offsetWidth) {
+					this.otherCategories.push(this.categories.pop());
+				} else {
+					this.categories.push(this.otherCategories.pop());
+				}
+			},
+		},
+		mounted() {
+			this.checkOverflow();
+			window.addEventListener("resize", this.checkOverflow); // Listen for resize events
+		},
+		beforeUnmount() {
+			window.removeEventListener("resize", this.checkOverflow); // Remove resize event listener
 		},
 	};
 </script>
