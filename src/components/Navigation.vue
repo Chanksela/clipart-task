@@ -98,6 +98,17 @@ export default {
     toggleHamburgerMenu() {
       this.mobileMenuOpen = !this.mobileMenuOpen;
     },
+    debounce(func, delay) {
+      let timer;
+      return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          func.apply(context, args);
+        }, delay);
+      };
+    },
     checkOverflow() {
       const headerElement = this.$refs.navigation;
       if (headerElement.scrollWidth > headerElement.offsetWidth) {
@@ -110,10 +121,13 @@ export default {
   },
   mounted() {
     this.checkOverflow();
-    window.addEventListener("resize", this.checkOverflow); // Listen for resize events
+    window.addEventListener("resize", this.debounce(this.checkOverflow, 100));
   },
   beforeUnmount() {
-    window.removeEventListener("resize", this.checkOverflow); // Remove resize event listener
+    window.removeEventListener(
+      "resize",
+      this.debounce(this.checkOverflow, 100),
+    );
   },
 };
 </script>
