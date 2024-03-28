@@ -1,9 +1,6 @@
 <template>
-	<header
-		class="sm:px-[56px] px-[16px] h-[80px] bg-white flex"
-		ref="navigation"
-	>
-		<nav class="flex justify-between items-center w-full">
+	<header class="sm:px-[56px] px-[16px] h-[80px] bg-white flex">
+		<nav class="flex justify-between items-center w-full" ref="navigation">
 			<a href="/"
 				><img
 					:src="logo"
@@ -15,10 +12,8 @@
 				:categories="categories"
 				:otherCategories="otherCategories"
 			/>
-			<div
-				class="flex items-center gap-2 min-w-[312px] max-w-[312px] justify-end"
-			>
-				<div class="hidden sm:flex sm:items-center sm:gap-2">
+			<div class="flex items-center gap-2 min-w-[312px] justify-end">
+				<div class="hidden sm:flex sm:items-center sm:gap-2 mr-[16px]">
 					<SocialMedias />
 					<div test class="block relative">
 						<input
@@ -86,9 +81,6 @@
 					"პოლიტიკა",
 					"საზოგადოება",
 					"სამართალი",
-					"ბიზნესი & ეკონომიკა",
-					"ბიზნესი & ეკონომიკა",
-					"ეკონომიკა",
 					"ბიზნესი & ეკონომიკა",
 					"ბიზნესი & ეკონომიკა",
 					"ეკონომიკა",
