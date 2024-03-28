@@ -1,10 +1,10 @@
 <template>
-	<div class="px-[16px] pt-[12px] pb-[24px] rounded-[20px] shadow-small my-6">
-		<slot></slot>
-	</div>
+  <div class="my-6 rounded-[20px] px-[16px] pb-[24px] pt-[12px] shadow-small">
+    <slot></slot>
+  </div>
 </template>
 <script>
-	export default {
-		name: "BaseCard",
-	};
+export default {
+  name: "BaseCard",
+};
 </script>
