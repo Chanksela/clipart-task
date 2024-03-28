@@ -16,14 +16,14 @@ export default {
 			},
 			lineHeight: {
 				"headline-1": "40px",
-				"headline-2": "28px",
+				"headline-2": "24px",
 				"headline-3": "20px",
 				text: "24px",
 				"small-text": "16px",
 			},
 			letterSpacing: {
 				headline: "-0.35px",
-				"headline-3": "-0.20px",
+				"headline-3": "-0.24px",
 				text: "-0.5px",
 				"small-text": "-0.20px",
 			},

@@ -12,7 +12,7 @@
 				:categories="categories"
 				:otherCategories="otherCategories"
 			/>
-			<div class="flex items-center gap-2 min-w-[312px] justify-end">
+			<div class="flex items-center gap-2 md:min-w-[312px] justify-end">
 				<div class="hidden sm:flex sm:items-center sm:gap-2 mr-[16px]">
 					<SocialMedias />
 					<div test class="block relative">
