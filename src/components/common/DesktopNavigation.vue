@@ -13,7 +13,7 @@
         სხვა</span
       >
       <ul
-        class="absolute mt-2.5 flex w-full flex-col gap-4 rounded-2xl bg-white py-4 shadow-big"
+        class="absolute z-20 mt-2.5 flex w-full flex-col gap-4 rounded-2xl bg-white py-4 shadow-big"
         v-if="showOtherCategories"
       >
         <li
