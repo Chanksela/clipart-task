@@ -1,6 +1,6 @@
 <template>
-  <div class="lg:grid lg:grid-cols-8 lg:gap-x-8">
-    <SliderCard class="lg:col-span-8">
+  <div class="lg:grid lg:grid-cols-8 lg:gap-x-8 xl:grid-cols-12">
+    <SliderCard class="lg:col-span-8 xl:col-span-10">
       <div>
         <img
           src="../assets/pics/article1.jpeg"
@@ -21,7 +21,7 @@
         </h2>
       </div>
     </SliderCard>
-    <BaseCard class="max-h-[330px] min-h-[330px] lg:col-span-4">
+    <BaseCard class="max-h-[330px] min-h-[330px] lg:col-span-4 xl:col-span-2">
       <BaseCardTitle>ყველა სიახლე</BaseCardTitle>
       <ul class="flex flex-col gap-4 pt-4">
         <li v-for="article in articles" class="border-b-2 border-dashed pb-4">
@@ -36,7 +36,9 @@
         </li>
       </ul>
     </BaseCard>
-    <BaseCard class="max-h-[330px] min-h-[330px] lg:col-span-4">
+    <BaseCard
+      class="max-h-[330px] min-h-[330px] lg:col-span-4 xl:col-span-3 xl:flex-col xl:overflow-y-scroll"
+    >
       <BaseCardTitle>პოპულარული</BaseCardTitle>
       <ul class="flex flex-col gap-4">
         <li
@@ -58,13 +60,12 @@
         </li>
       </ul>
     </BaseCard>
-
-    <BaseCard class="lg:col-span-8">
+    <BaseCard class="lg:col-span-8 xl:col-span-9">
       <BaseCardTitle> ცნობილი ფაქტები</BaseCardTitle>
       <ul class="flex items-center gap-4">
         <li
           v-for="article in articles"
-          class="flex max-h-[204px] min-h-[204px] min-w-[320px] flex-col gap-2 rounded-[20px] bg-primary-light p-12 pb-16"
+          class="flex min-w-[320px] flex-col gap-2 rounded-[20px] bg-primary-light p-12 pb-16 lg:min-w-[312px]"
         >
           <div>
             <img
@@ -84,21 +85,24 @@
     <BaseCard
       v-for="(article, index) in articles"
       :key="index"
-      :class="{ 'lg:col-span-8': index === 0, 'lg:col-span-4': index !== 0 }"
+      :class="{
+        'lg:col-span-8': index === 0,
+        'lg:col-span-4': index !== 0,
+      }"
+      class="xl:col-span-4"
     >
       <div>
         <img
           :src="article.image"
           alt=""
-          class="mb-4 w-full rounded-[20px] object-cover"
+          class="mb-4 w-full rounded-[20px] object-cover xl:h-[160px]"
           :class="{
-            ' lg:h-auto': index === 0,
-            ' lg:h-[160px]': index !== 0,
+            'lg:h-auto': index === 0,
+            'lg:h-[160px]': index !== 0,
           }"
         />
       </div>
       <div class="mb-2 flex gap-1">
-        {{ index }}
         <InfoSpan> {{ article.date }} </InfoSpan>
         <InfoSpan> {{ article.category }} </InfoSpan>
       </div>
