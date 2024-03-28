@@ -5,7 +5,7 @@
 				><img
 					:src="logo"
 					alt="company logo"
-					class="min-w-[164px] max-w-[164px]"
+					class="min-w-[137px] max-w-[137px] xl:min-w-[167px] xl:max-w-[167px]"
 			/></a>
 			<DesktopNavigation
 				:overflow="overflow"
