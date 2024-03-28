@@ -145,6 +145,12 @@ import BaseCardTitle from "./common/content/BaseCardTitle.vue";
 import InfoSpan from "./common/content/InfoSpan.vue";
 
 import watchIcon from "../assets/svg/watch.svg";
+import article1 from "../assets/pics/article1.jpeg";
+import article2 from "../assets/pics/article2.jpeg";
+import article3 from "../assets/pics/article3.jpeg";
+import article4 from "../assets/pics/article4.jpeg";
+import article5 from "../assets/pics/article5.jpeg";
+import article6 from "../assets/pics/article6.jpeg";
 export default {
   name: "Content",
   components: {
@@ -168,77 +174,77 @@ export default {
           title: "სტატია 1 - ქართული ტექსტი - მეტი ინფორმაცია თემის შესახებ",
           date: "2023-08-12",
           time: "7:30",
-          image: "../src/assets/pics/article3.jpeg",
+          image: article3,
           category: "პოლიტიკა",
         },
         {
           title: "სტატია 2 - ქართული ტექსტი - მეტი ინფორმაცია თემის შესახებ",
           date: "2023-08-13",
           time: "8:45",
-          image: "../src/assets/pics/article4.jpeg",
+          image: article4,
           category: "საზოგადოება",
         },
         {
           title: "სტატია 3 - ქართული ტექსტი - მეტი ინფორმაცია თემის შესახებ",
           date: "2023-08-14",
           time: "10:15",
-          image: "../src/assets/pics/article3.jpeg",
+          image: article5,
           category: "სამართალი",
         },
         {
           title: "სტატია 4",
           date: "2023-08-15",
           time: "12:30",
-          image: "../src/assets/pics/article2.jpeg",
+          image: article3,
           category: "ბიზნესი & ეკონომიკა",
         },
         {
           title: "სტატია 5",
           date: "2023-08-16",
           time: "14:45",
-          image: "../src/assets/pics/article5.jpeg",
+          image: article1,
           category: "ბიზნესი & ეკონომიკა",
         },
         {
           title: "სტატია 6",
           date: "2023-08-17",
           time: "16:00",
-          image: "../src/assets/pics/article6.jpeg",
+          image: article2,
           category: "ეკონომიკა",
         },
         {
           title: "სტატია 7",
           date: "2023-08-18",
           time: "18:15",
-          image: "../src/assets/pics/article1.jpeg",
+          image: article6,
           category: "რელიგია",
         },
         {
           title: "სტატია 8",
           date: "2023-08-19",
           time: "20:30",
-          image: "../src/assets/pics/article4.jpeg",
+          image: article4,
           category: "პოლიტიკა",
         },
         {
           title: "სტატია 9",
           date: "2023-08-20",
           time: "22:45",
-          image: "../src/assets/pics/article3.jpeg",
+          image: article5,
           category: "საზოგადოება",
         },
         {
           title: "სტატია 10",
           date: "2023-08-21",
           time: "9:00",
-          image: "../src/assets/pics/article2.jpeg",
+          image: article2,
           category: "სამართალი",
         },
         {
           title: "სტატია 11",
           date: "2023-08-22",
           time: "11:15",
-          image: "../src/assets/pics/article6.jpeg",
+          image: article3,
           category: "ბიზნესი & ეკონომიკა",
         },
       ],
