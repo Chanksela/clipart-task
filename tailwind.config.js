@@ -27,6 +27,20 @@ export default {
 				text: "-0.02em",
 				"small-text": "-0.02em",
 			},
+			colors: {
+				primary: "#585EE3",
+				"primary-light": "#F5F8FF",
+
+				"black-900": "#000000",
+				"black-700": "#1D2D35",
+				"black-600": "#657178",
+				"black-300": "#EFF4F5",
+				white: "#FFFFFF",
+			},
+			boxShadow: {
+				big: "0px 0px 40px 0px #00000014",
+				small: "0px 0px 20px 0px #0000001A",
+			},
 		},
 	},
 };
