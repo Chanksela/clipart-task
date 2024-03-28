@@ -1,7 +1,17 @@
 <template>
 	<div
-		class="bg-primary-light w-[48px] h-[48px] rounded-full flex justify-center items-center"
+		class="bg-primary-light rounded-full flex justify-center items-center"
+		:style="{ width: size, height: size }"
 	>
 		<slot></slot>
 	</div>
 </template>
+<script>
+	export default {
+		props: {
+			size: {
+				default: "48px",
+			},
+		},
+	};
+</script>

@@ -24,8 +24,8 @@ export default {
 			letterSpacing: {
 				headline: "-0.35px",
 				"headline-3": "-0.20px",
-				text: "-0.02em",
-				"small-text": "-0.02em",
+				text: "-0.5px",
+				"small-text": "-0.20px",
 			},
 			colors: {
 				primary: "#585EE3",
